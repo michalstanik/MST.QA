@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MST.QA.Core.Data;
+using MST.QA.Core.DataInterfaces;
 using MST.QA.Data.Contracts.RepositoryInterfaces;
 using MST.QA.DataModel.Projects;
 using MST.QA.Server.Bootstrapper;
@@ -27,6 +28,16 @@ namespace MST.QA.Data.Tests
             Assert.IsTrue(projects != null);
         }
 
+        [TestMethod]
+        public void test_repository_factory_usage()
+        {
+            RepositoryFactoryTestClass factoryTest = new RepositoryFactoryTestClass();
+
+            IEnumerable<Project> projects = factoryTest.GetProjects();
+
+            Assert.IsTrue(projects != null);
+        }
+
     }
 
     public class RepositoryTestClass
@@ -50,6 +61,31 @@ namespace MST.QA.Data.Tests
 
             return projects;
         }
-       
+
+    }
+
+    public class RepositoryFactoryTestClass
+    {
+        public RepositoryFactoryTestClass()
+        {
+            ObjectBase.Container.SatisfyImportsOnce(this);
+        }
+
+        public RepositoryFactoryTestClass(IDataRepositoryFactory dataRepositoryFactory)
+        {
+            _dataRepositoryFactory = dataRepositoryFactory;
+        }
+
+        [Import]
+        IDataRepositoryFactory _dataRepositoryFactory;
+
+        public IEnumerable<Project> GetProjects()
+        {
+            IProjectRepository projectRepository = _dataRepositoryFactory.GetDataRepository<IProjectRepository>();
+
+            IEnumerable<Project> projects = projectRepository.Get();
+
+            return projects;
+        }
     }
 }

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataInterfaces\IDataRepository.cs" />
+    <Compile Include="DataInterfaces\IDataRepositoryFactory.cs" />
     <Compile Include="DataInterfaces\IIdentifiableEntity.cs" />
     <Compile Include="Data\DataRepositoryBase.cs" />
     <Compile Include="Data\EntityBase.cs" />
