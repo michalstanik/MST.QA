@@ -66,7 +66,20 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MST.QA.Core\MST.QA.Core.csproj">
+      <Project>{25f4e6fc-b661-4e1c-8348-66f81409ebcb}</Project>
+      <Name>MST.QA.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.QA.Server.Contracts\MST.QA.Server.Contracts.csproj">
+      <Project>{5a7a712b-bd71-4589-a136-32274ec0af94}</Project>
+      <Name>MST.QA.Server.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.QA.Server.Managers\MST.QA.Server.Managers.csproj">
+      <Project>{a1329e45-e40d-4c56-9a5b-8256a21a4795}</Project>
+      <Name>MST.QA.Server.Managers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
