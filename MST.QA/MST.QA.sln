@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Server.WebHost", "MST.QA.Server.WebHost\MST.QA.Server.WebHost.csproj", "{28179E90-3EDB-4D14-BA0B-BF66216FD204}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Hosting.WebHost", "MST.QA.Server.WebHost\MST.QA.Hosting.WebHost.csproj", "{28179E90-3EDB-4D14-BA0B-BF66216FD204}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{56DBD448-2E40-4532-BC26-3FD1FFCC3EE8}"
 EndProject
@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Server.Contracts", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Server.Managers", "MST.QA.Server.Managers\MST.QA.Server.Managers.csproj", "{A1329E45-E40D-4C56-9A5B-8256A21A4795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Server.Console", "MST.QA.Server.Console\MST.QA.Server.Console.csproj", "{BEA6F76D-92B9-4EA0-8809-8A6508A7C12B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Hosting.Console", "MST.QA.Server.Console\MST.QA.Hosting.Console.csproj", "{BEA6F76D-92B9-4EA0-8809-8A6508A7C12B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.QA.Client.Contracts", "MST.QA.Client.Contracts\MST.QA.Client.Contracts.csproj", "{C6DA43FD-4CF5-412D-8C07-BC10E8A9097F}"
 EndProject

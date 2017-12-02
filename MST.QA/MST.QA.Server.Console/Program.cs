@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SM = System.ServiceModel;
 
-namespace MST.QA.Server.Console
+namespace MST.QA.Hosting.Console
 {
     class Program
     {

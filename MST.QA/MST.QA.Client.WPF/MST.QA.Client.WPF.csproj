@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\MainViewMoodel.cs" />
+    <Compile Include="ViewModels\TestSuitsViewModel.cs" />
+    <Compile Include="Views\DashboardView.xaml.cs">
+      <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestSuitesView.xaml.cs">
+      <DependentUpon>TestSuitesView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +79,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DashboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TestSuitesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +117,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MST.QA.Client.Bootstrapper\MST.QA.Client.Bootstrapper.csproj">
+      <Project>{6b201a39-a1ac-4ada-8803-08ebbec522bb}</Project>
+      <Name>MST.QA.Client.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.QA.Client.Contracts\MST.QA.Client.Contracts.csproj">
+      <Project>{c6da43fd-4cf5-412d-8c07-bc10e8a9097f}</Project>
+      <Name>MST.QA.Client.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.QA.Client.Proxies\MST.QA.Client.Proxies.csproj">
+      <Project>{95f98d4b-a220-4ab4-9ab6-26f8470b1735}</Project>
+      <Name>MST.QA.Client.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.QA.Core\MST.QA.Core.csproj">
+      <Project>{25f4e6fc-b661-4e1c-8348-66f81409ebcb}</Project>
+      <Name>MST.QA.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.QA.DataModel\MST.QA.DataModel.csproj">
+      <Project>{5C8E296D-0DE6-48B2-9AEE-B177684F46D1}</Project>
+      <Name>MST.QA.DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro">
+      <Version>1.5.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

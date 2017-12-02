@@ -10,9 +10,9 @@ namespace MST.QA.Client.Contracts.ServiceContracts
     public interface IProjectService :IServiceContract
     {
         [OperationContract]
-        Task<Project> GetProject(int projectId);
+        Project GetProject(int projectId);
 
         [OperationContract]
-        Task<IEnumerable<Project>> GetAllProjects();
+        IEnumerable<Project> GetAllProjects();
     }
 }

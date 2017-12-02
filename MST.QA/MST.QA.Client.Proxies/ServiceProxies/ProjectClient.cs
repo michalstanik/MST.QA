@@ -11,14 +11,14 @@ namespace MST.QA.Client.Proxies.ServiceProxies
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class ProjectClient : ClientBase<IProjectService>, IProjectService
     {
-        public async Task<IEnumerable<Project>> GetAllProjects()
+        public  IEnumerable<Project> GetAllProjects()
         {
-            return await Channel.GetAllProjects();
+            return  Channel.GetAllProjects();
         }
 
-        public async Task<Project> GetProject(int projectId)
+        public Project GetProject(int projectId)
         {
-            return await Channel.GetProject(projectId);
+            return  Channel.GetProject(projectId);
         }
     }
 }
