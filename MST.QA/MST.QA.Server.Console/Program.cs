@@ -1,4 +1,6 @@
-﻿using MST.QA.Server.Managers.Managers;
+﻿using MST.QA.Core.Data;
+using MST.QA.Server.Bootstrapper;
+using MST.QA.Server.Managers.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,8 @@ namespace MST.QA.Hosting.Console
         {
             System.Console.WriteLine("Starting up services...");
             System.Console.WriteLine("");
+
+            ObjectBase.Container = MEFLoader.Init();
 
             SM.ServiceHost hostProjectManager = new SM.ServiceHost(typeof(ProjectManager));
 

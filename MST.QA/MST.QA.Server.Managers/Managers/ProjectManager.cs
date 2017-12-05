@@ -18,7 +18,7 @@ namespace MST.QA.Server.Managers.Managers
     {
         public ProjectManager()
         {
-            
+
         }
 
         public ProjectManager(IDataRepositoryFactory dataRepositoryFactory)
@@ -50,7 +50,14 @@ namespace MST.QA.Server.Managers.Managers
         [OperationBehavior(TransactionScopeRequired = true)]
         public IEnumerable<Project> GetAllProjects()
         {
-            throw new System.NotImplementedException();
+            return ExecuteFaultHandledOperation(() =>
+            {
+                IProjectRepository projectRepository = _dataRepositoryFactory.GetDataRepository<IProjectRepository>();
+
+                IEnumerable<Project> Projects = projectRepository.Get();
+
+                return Projects;
+            });
         }
     }
 }
