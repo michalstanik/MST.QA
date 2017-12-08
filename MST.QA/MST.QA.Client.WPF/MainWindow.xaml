@@ -7,7 +7,8 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:MST.QA.Client.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="479" Width="836">
+        Title="MST.QA" Height="479" Width="836"
+                      ResizeMode="CanResizeWithGrip">
     <Grid>
         <v:MainView x:Name="main" Margin="10" />
     </Grid>

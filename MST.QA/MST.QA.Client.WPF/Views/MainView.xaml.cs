@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MST.QA.Core.UI;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +20,7 @@ namespace MST.QA.Client.WPF.Views
     /// <summary>
     /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    public partial class MainView : UserControlViewBase
     {
         public MainView()
         {
