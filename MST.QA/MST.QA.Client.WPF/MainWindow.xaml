@@ -7,8 +7,32 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:MST.QA.Client.WPF"
         mc:Ignorable="d"
-        Title="MST.QA" Height="479" Width="836"
-                      ResizeMode="CanResizeWithGrip">
+        Title="MST.QA" Height="820" Width="1200"
+                      ResizeMode="CanResizeWithGrip"
+                      RightWindowCommandsOverlayBehavior="Never"
+                      >
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout
+                Position="Right"
+                AreAnimationsEnabled="True"
+                HorizontalContentAlignment="Stretch"
+                CloseButtonVisibility="Hidden"
+                Header="Chose your Project"
+                Theme="Inverse"
+                IsModal="True"
+                IsOpen="{Binding IsProjectLoadedFlyoutOpen, Mode=TwoWay}">
+                <v:ProjectLoadedFlyoutView
+                    DataContext="{Binding ProjectLoadedFlyoutViewModel}">
+                </v:ProjectLoadedFlyoutView>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button Command="{Binding Settings}">Change Project</Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
     <Grid>
         <v:MainView x:Name="main" Margin="10" />
     </Grid>

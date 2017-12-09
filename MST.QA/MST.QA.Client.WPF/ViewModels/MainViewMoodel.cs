@@ -14,13 +14,12 @@ namespace MST.QA.Client.WPF.ViewModels
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class MainViewMoodel : ViewModelBase
     {
-        
+
         [Import]
         public DashboardViewModel DashboardViewModel { get; private set; }
 
         [Import]
         public TestSuitsViewModel TestSuitsViewModel { get; private set; }
-
     }
 }
 

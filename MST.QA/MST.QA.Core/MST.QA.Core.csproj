@@ -55,6 +55,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceInterfaces\IServiceContract.cs" />
     <Compile Include="ServiceInterfaces\IServiceFactory.cs" />
+    <Compile Include="UI\RelayCommand.cs" />
     <Compile Include="UI\UserControlViewBase.cs" />
     <Compile Include="UI\ViewModelBase.cs" />
     <Compile Include="Utils\SimpleMapper.cs" />

@@ -19,6 +19,7 @@ namespace MST.QA.Client.WPF
             InitializeComponent();
             var factory = ObjectBase.Container.GetExportedValue<IServiceFactory>();
             _viewModel = new MainWindowViewModel(factory, new MessageDialogService(this));
+            this.DataContext = _viewModel;
             Loaded += MainWindow_Loaded;
 
             main.DataContext = ObjectBase.Container.GetExportedValue<MainViewMoodel>();

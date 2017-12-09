@@ -60,12 +60,16 @@
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\MainViewMoodel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ProjectLoadedFlyoutViewModel.cs" />
     <Compile Include="ViewModels\TestSuitsViewModel.cs" />
     <Compile Include="Views\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProjectLoadedFlyoutView.xaml.cs">
+      <DependentUpon>ProjectLoadedFlyoutView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TestSuitesView.xaml.cs">
       <DependentUpon>TestSuitesView.xaml</DependentUpon>
@@ -87,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProjectLoadedFlyoutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
