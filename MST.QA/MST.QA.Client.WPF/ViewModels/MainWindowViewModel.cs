@@ -15,7 +15,7 @@ namespace MST.QA.Client.WPF.ViewModels
             _serviceFactory = serviceFactory;
             _messageDialogService = messageDialogService;
            
-            ProjectLoadedFlyoutViewModel = new ProjectLoadedFlyoutViewModel(() => IsProjectLoadedFlyoutOpen = false);
+            ProjectLoadedFlyoutViewModel = new ProjectLoadedFlyoutViewModel(serviceFactory, () => IsProjectLoadedFlyoutOpen = false);
 
             Settings = new RelayCommand(_ => OnSettingsCommand());
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MST.QA.Core.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace MST.QA.Client.WPF.Views
     /// <summary>
     /// Interaction logic for ProjectLoadedFlyoutView.xaml
     /// </summary>
-    public partial class ProjectLoadedFlyoutView : UserControl
+    public partial class ProjectLoadedFlyoutView : UserControlViewBase
     {
         public ProjectLoadedFlyoutView()
         {

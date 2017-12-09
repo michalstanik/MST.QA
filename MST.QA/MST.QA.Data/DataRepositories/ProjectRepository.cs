@@ -3,6 +3,7 @@ using MST.QA.DataModel.Projects;
 using System.Linq;
 using MST.QA.Data.Contracts.RepositoryInterfaces;
 using System.ComponentModel.Composition;
+using MST.QA.DataModel;
 
 namespace MST.QA.Data.DataRepositories
 {
@@ -10,6 +11,21 @@ namespace MST.QA.Data.DataRepositories
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class ProjectRepository : DataRepositoryBase<Project>, IProjectRepository
     {
+        public IEnumerable<LookupItem> GetProjectLookup()
+        {
+            using (MSTQAContext entityContext = new MSTQAContext())
+            {
+                return entityContext.Projects.AsNoTracking()
+                    .Select(f =>
+                    new LookupItem
+                    {
+                        Id = f.ProjectId,
+                        DisplayMember = f.ProjectName
+                    })
+                    .ToList();
+            }
+        }
+
         protected override Project AddEntity(MSTQAContext entityContext, Project entity)
         {
             return entityContext.Projects.Add(entity);

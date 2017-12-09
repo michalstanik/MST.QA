@@ -7,6 +7,7 @@ using MST.QA.Server.Contracts.ServiceContracts;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ServiceModel;
+using MST.QA.DataModel;
 
 namespace MST.QA.Server.Managers.Managers
 {
@@ -57,6 +58,19 @@ namespace MST.QA.Server.Managers.Managers
                 IEnumerable<Project> Projects = projectRepository.Get();
 
                 return Projects;
+            });
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        public IEnumerable<LookupItem> GetProjectLookup()
+        {
+            return ExecuteFaultHandledOperation(() =>
+            {
+                IProjectRepository projectRepository = _dataRepositoryFactory.GetDataRepository<IProjectRepository>();
+
+                IEnumerable<LookupItem> projecLookup = projectRepository.GetProjectLookup();
+
+                return projecLookup;
             });
         }
     }

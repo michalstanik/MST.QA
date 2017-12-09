@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="MST.QA.Client.WPF.Views.ProjectLoadedFlyoutView"
+﻿<core:UserControlViewBase x:Class="MST.QA.Client.WPF.Views.ProjectLoadedFlyoutView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MST.QA.Client.WPF.Views"
+             xmlns:core="clr-namespace:MST.QA.Core.UI;assembly=MST.QA.Core"
              mc:Ignorable="d" 
-             d:DesignHeight="2000" d:DesignWidth="2000">
+             d:DesignHeight="500" d:DesignWidth="500" FontSize="22">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -15,8 +16,9 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -28,18 +30,9 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0">FTP Server</Label>
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="5"></TextBox>
-        <Label Grid.Row="1">User name</Label>
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="5"></TextBox>
-        <Label Grid.Row="2">Password</Label>
-        <PasswordBox Grid.Column="1" Grid.Row="2" Margin="5"></PasswordBox>
-        <Label Grid.Row="3">Include stats</Label>
-        <CheckBox Grid.Column="1" Grid.Row="3" Margin="5"></CheckBox>
-        <Label Grid.Row="4">Minimum appearances</Label>
-        <Slider
-            Style="{DynamicResource FlatSlider}"
-            Grid.Column="1" Grid.Row="4" Margin="5"></Slider>
+        <Label Grid.Row="0">Projects</Label>
+        <ComboBox Grid.Column="1" Grid.Row="0" Margin="5" ItemsSource="{Binding Projects}" DisplayMemberPath="DisplayMember" ></ComboBox>
+
         <Button Command="{Binding OkCommand}" IsDefault="True" Grid.Column="1" Grid.Row="5" Margin="5" Width="80" HorizontalAlignment="Right">OK</Button>
     </Grid>
-</UserControl>
+</core:UserControlViewBase>

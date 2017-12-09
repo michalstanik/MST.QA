@@ -4,6 +4,7 @@ using MST.QA.DataModel.Projects;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.ComponentModel.Composition;
+using MST.QA.DataModel;
 
 namespace MST.QA.Client.Proxies.ServiceProxies
 {
@@ -19,6 +20,11 @@ namespace MST.QA.Client.Proxies.ServiceProxies
         public Project GetProject(int projectId)
         {
             return  Channel.GetProject(projectId);
+        }
+
+        public IEnumerable<LookupItem> GetProjectLookup()
+        {
+            return Channel.GetProjectLookup();
         }
     }
 }
