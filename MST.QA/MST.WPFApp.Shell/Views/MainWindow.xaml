@@ -36,6 +36,13 @@
 
         <!-- Main-Region -->
         <ItemsControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static infConstants:RegionNames.MainRegion}"/>
-
+        
+        <!-- StatusBar -->
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>MST.QA</StatusBarItem>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <StatusBarItem Content="Messge:" />
+            <StatusBarItem Content="{Binding Path=StatusBarMessage, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+        </StatusBar>
     </Grid>
 </metro:MetroWindow>

@@ -1,6 +1,7 @@
 ﻿using MahApps.Metro;
 using MST.WPFApp.Infrastructure.Base;
 using MST.WPFApp.Infrastructure.Constants;
+using MST.WPFApp.Infrastructure.Events;
 using MST.WPFApp.Infrastructure.Interfaces;
 using MST.WPFApp.Shell.Model;
 using System;
@@ -46,7 +47,7 @@ namespace MST.WPFApp.Shell.ViewModels
 
                     _globalConfigService.Update(AppSettingsParam.AppTheme, appTheme.Name);
 
-                    //EventAggregator.GetEvent<StatusBarMessageUpdateEvent>().Publish(String.Format("Theme changed to {0}", value.Name));
+                    EventAggregator.GetEvent<StatusBarMessageUpdateEvent>().Publish(String.Format("Theme changed to {0}", value.Name));
                 }
             }
         }

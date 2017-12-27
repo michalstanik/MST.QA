@@ -49,6 +49,7 @@
     <Compile Include="Constants\FlyoutNames.cs" />
     <Compile Include="Constants\RegionNames.cs" />
     <Compile Include="Constants\WindowNames.cs" />
+    <Compile Include="Events\StatusBarMessageUpdateEvent.cs" />
     <Compile Include="Interfaces\IFlyoutService.cs" />
     <Compile Include="Interfaces\IFlyoutView.cs" />
     <Compile Include="Interfaces\ISettings.cs" />

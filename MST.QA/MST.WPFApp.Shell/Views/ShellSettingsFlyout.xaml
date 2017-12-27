@@ -15,7 +15,9 @@
                 HorizontalContentAlignment="Stretch"
                 Theme="Inverse"
                     >
-    <Grid Margin="5">
+    <TabControl>
+        <TabItem Header="Genaeral">
+            <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="5" />
@@ -40,4 +42,10 @@
                   DisplayMemberPath="Name" 
                   SelectedItem="{Binding Path=SelectedTheme, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
     </Grid>
+        </TabItem>
+        <TabItem Header="Preference">
+        </TabItem>
+        <TabItem Header="Advanced">
+        </TabItem>
+    </TabControl>
 </metro:Flyout>
