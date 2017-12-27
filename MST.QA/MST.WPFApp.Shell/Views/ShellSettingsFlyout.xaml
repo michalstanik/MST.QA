@@ -18,30 +18,45 @@
     <TabControl>
         <TabItem Header="Genaeral">
             <Grid Margin="5">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="5" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="3" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="3" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="3" />
-        </Grid.RowDefinitions>
-        <!-- Theme -->
-        <TextBlock Grid.Column="0"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="3" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="3" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="3" />
+                </Grid.RowDefinitions>
+                <!-- Theme -->
+                <TextBlock Grid.Column="0"
                    Grid.Row="0"
                    VerticalAlignment="Center"
-                   Text="Theme" />
-        <ComboBox Grid.Column="2"
+                   Text="Theme" 
+                   Margin="5 5 10 5 "/>
+                <ComboBox Grid.Column="1"
                   Grid.Row="0"
                   ItemsSource="{Binding Path=ApplicationThemes, UpdateSourceTrigger=PropertyChanged}"
                   DisplayMemberPath="Name" 
-                  SelectedItem="{Binding Path=SelectedTheme, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-    </Grid>
+                  SelectedItem="{Binding Path=SelectedTheme, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  Margin="5 5 10 5 "/>
+
+                <!-- Accent -->
+                <TextBlock Grid.Column="0"
+                   Grid.Row="2"
+                   VerticalAlignment="Center"
+                   Text="Color" 
+                   Margin="5 5 10 5 "/>
+                <ComboBox Grid.Column="1"
+                  Grid.Row="2" 
+                  ItemsSource="{Binding Path=AccentColors, UpdateSourceTrigger=PropertyChanged}"
+                  DisplayMemberPath="Name" 
+                  SelectedItem="{Binding Path=SelectedAccentColor, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                  Margin="5 5 10 5 "/>
+            </Grid>
         </TabItem>
         <TabItem Header="Preference">
         </TabItem>
