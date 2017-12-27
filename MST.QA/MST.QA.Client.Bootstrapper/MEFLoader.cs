@@ -24,7 +24,9 @@ namespace MST.QA.Client.Bootstrapper
 
             CompositionContainer container = new CompositionContainer(catalog);
 
+            
             return container;
         }
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using MST.QA.Client.WPF.Views;
+﻿using MahApps.Metro.Controls.Dialogs;
 using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using System.Windows;

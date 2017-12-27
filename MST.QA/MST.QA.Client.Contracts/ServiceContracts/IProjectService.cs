@@ -3,7 +3,6 @@ using MST.QA.DataModel;
 using MST.QA.DataModel.Projects;
 using System.Collections.Generic;
 using System.ServiceModel;
-using System.Threading.Tasks;
 
 namespace MST.QA.Client.Contracts.ServiceContracts
 {

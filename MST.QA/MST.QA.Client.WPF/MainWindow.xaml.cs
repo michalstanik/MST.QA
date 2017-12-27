@@ -6,6 +6,7 @@ using MST.QA.Core.Data;
 using System.ComponentModel.Composition;
 using MST.QA.Client.WPF.Services;
 using MST.QA.Core.ServiceInterfaces;
+using Prism.Events;
 
 namespace MST.QA.Client.WPF
 {
@@ -14,6 +15,7 @@ namespace MST.QA.Client.WPF
     {
         private MainWindowViewModel _viewModel;
 
+        //[ImportingConstructor]
         public MainWindow()
         {
             InitializeComponent();

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1DCF4916-8FB6-4842-BCE5-C4EBE9F0B03B}</ProjectGuid>
+    <ProjectGuid>{2C507EE2-A3C2-4AF6-A2D5-C770BB28C82A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MST.QA.Client.WPF</RootNamespace>
-    <AssemblyName>MST.QA.Client.WPF</AssemblyName>
+    <RootNamespace>MST.WPFApp.Shell</RootNamespace>
+    <AssemblyName>MST.WPFApp.Shell</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,7 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,24 +54,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Services\IMessageDialogService.cs" />
-    <Compile Include="Services\MessageDialogService.cs" />
-    <Compile Include="ViewModels\DashboardViewModel.cs" />
-    <Compile Include="ViewModels\MainViewMoodel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\ProjectLoadedFlyoutViewModel.cs" />
-    <Compile Include="ViewModels\TestSuitsViewModel.cs" />
-    <Compile Include="Views\DashboardView.xaml.cs">
-      <DependentUpon>DashboardView.xaml</DependentUpon>
+    <Compile Include="Model\ApplicationTheme.cs" />
+    <Compile Include="ViewModels\RightTitlebarCommandsViewModel.cs" />
+    <Compile Include="ViewModels\ShellSettingsFlyoutViewModel.cs" />
+    <Compile Include="Views\RightTitlebarCommands.xaml.cs">
+      <DependentUpon>RightTitlebarCommands.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainView.xaml.cs">
-      <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProjectLoadedFlyoutView.xaml.cs">
-      <DependentUpon>ProjectLoadedFlyoutView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TestSuitesView.xaml.cs">
-      <DependentUpon>TestSuitesView.xaml</DependentUpon>
+    <Compile Include="Views\ShellSettingsFlyout.xaml.cs">
+      <DependentUpon>ShellSettingsFlyout.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -82,23 +71,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Bootstrapper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\DashboardView.xaml">
+    <Page Include="Views\RightTitlebarCommands.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProjectLoadedFlyoutView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TestSuitesView.xaml">
+    <Page Include="Views\ShellSettingsFlyout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,37 +112,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MST.QA.Client.Bootstrapper\MST.QA.Client.Bootstrapper.csproj">
-      <Project>{6b201a39-a1ac-4ada-8803-08ebbec522bb}</Project>
-      <Name>MST.QA.Client.Bootstrapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MST.QA.Client.Contracts\MST.QA.Client.Contracts.csproj">
-      <Project>{c6da43fd-4cf5-412d-8c07-bc10e8a9097f}</Project>
-      <Name>MST.QA.Client.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MST.QA.Client.Proxies\MST.QA.Client.Proxies.csproj">
-      <Project>{95f98d4b-a220-4ab4-9ab6-26f8470b1735}</Project>
-      <Name>MST.QA.Client.Proxies</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MST.QA.Core\MST.QA.Core.csproj">
-      <Project>{25f4e6fc-b661-4e1c-8348-66f81409ebcb}</Project>
-      <Name>MST.QA.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MST.QA.DataModel\MST.QA.DataModel.csproj">
-      <Project>{5C8E296D-0DE6-48B2-9AEE-B177684F46D1}</Project>
-      <Name>MST.QA.DataModel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="EntityFramework">
-      <Version>6.2.0</Version>
-    </PackageReference>
     <PackageReference Include="MahApps.Metro">
       <Version>1.5.0</Version>
     </PackageReference>
     <PackageReference Include="Prism.Core">
       <Version>6.3.0</Version>
     </PackageReference>
+    <PackageReference Include="Prism.Unity">
+      <Version>6.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Wpf">
+      <Version>6.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MST.QA.Core\MST.QA.Core.csproj">
+      <Project>{25F4E6FC-B661-4E1C-8348-66F81409EBCB}</Project>
+      <Name>MST.QA.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.WPFApp.Infrastructure\MST.WPFApp.Infrastructure.csproj">
+      <Project>{F8D931F2-E344-4970-BFB9-F94828C796C1}</Project>
+      <Name>MST.WPFApp.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
