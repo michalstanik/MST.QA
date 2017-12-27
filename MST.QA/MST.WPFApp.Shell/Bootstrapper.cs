@@ -33,7 +33,7 @@ namespace MST.WPFApp.Shell
                 //regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(HomeTiles));
             }
 
-            //Application.Current.MainWindow = (MetroWindow)this.Shell;
+            Application.Current.MainWindow = (Window)this.Shell;
             Application.Current.MainWindow.Show();
         }
 
@@ -42,8 +42,11 @@ namespace MST.WPFApp.Shell
             base.ConfigureContainer();
 
             Container.RegisterType<IApplicationCommands, ApplicationCommandsProxy>();
+            Container.RegisterType<ISettings, AppSettings>();
 
             Container.RegisterInstance<IFlyoutService>(Container.Resolve<FlyoutService>());
+
+            Container.RegisterInstance<IGlobalConfigService>(Container.Resolve<GlobalConfigService>());
         }
     }
 }

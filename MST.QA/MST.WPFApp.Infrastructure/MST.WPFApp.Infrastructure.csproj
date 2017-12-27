@@ -45,13 +45,17 @@
   <ItemGroup>
     <Compile Include="ApplicationCommands.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Constants\AppSettingsParam.cs" />
     <Compile Include="Constants\FlyoutNames.cs" />
     <Compile Include="Constants\RegionNames.cs" />
     <Compile Include="Constants\WindowNames.cs" />
     <Compile Include="Interfaces\IFlyoutService.cs" />
     <Compile Include="Interfaces\IFlyoutView.cs" />
+    <Compile Include="Interfaces\ISettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FlyoutService.cs" />
+    <Compile Include="Services\GlobalConfigService.cs" />
+    <Compile Include="Interfaces\IGlobalConfigService.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MahApps.Metro">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MST.WPFApp.Shell;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MST.WPFApp.Shell
+namespace MST.WPFApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

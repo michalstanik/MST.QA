@@ -1,5 +1,7 @@
 ﻿using MahApps.Metro;
 using MST.WPFApp.Infrastructure.Base;
+using MST.WPFApp.Infrastructure.Constants;
+using MST.WPFApp.Infrastructure.Interfaces;
 using MST.WPFApp.Shell.Model;
 using System;
 using System.Collections.Generic;
@@ -11,8 +13,11 @@ namespace MST.WPFApp.Shell.ViewModels
 {
     public class ShellSettingsFlyoutViewModel : ViewModelBase
     {
-        public ShellSettingsFlyoutViewModel()
+        private IGlobalConfigService _globalConfigService;
+
+        public ShellSettingsFlyoutViewModel(IGlobalConfigService globalConfigService)
         {
+            _globalConfigService = globalConfigService;
             this.ApplicationThemes = ThemeManager.AppThemes
                 .Select(a => new ApplicationTheme() { Name = a.Name, BorderColorBrush = a.Resources["BlackColorBrush"] as Brush, ColorBrush = a.Resources["WhiteColorBrush"] as Brush })
                 .ToList();
@@ -38,6 +43,8 @@ namespace MST.WPFApp.Shell.ViewModels
                     var theme = ThemeManager.DetectAppStyle(Application.Current);
                     var appTheme = ThemeManager.GetAppTheme(value.Name);
                     ThemeManager.ChangeAppStyle(Application.Current, theme.Item2, appTheme);
+
+                    _globalConfigService.Update(AppSettingsParam.AppTheme, appTheme.Name);
 
                     //EventAggregator.GetEvent<StatusBarMessageUpdateEvent>().Publish(String.Format("Theme changed to {0}", value.Name));
                 }

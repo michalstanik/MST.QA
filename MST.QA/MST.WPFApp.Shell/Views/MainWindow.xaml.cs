@@ -3,7 +3,7 @@ using MST.WPFApp.Infrastructure.Constants;
 using Prism.Regions;
 using System.Windows;
 
-namespace MST.WPFApp.Shell
+namespace MST.WPFApp.Shell.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
