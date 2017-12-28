@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -131,6 +132,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MST.QA.Client.Bootstrapper\MST.QA.Client.Bootstrapper.csproj">
+      <Project>{6b201a39-a1ac-4ada-8803-08ebbec522bb}</Project>
+      <Name>MST.QA.Client.Bootstrapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MST.QA.Client.Contracts\MST.QA.Client.Contracts.csproj">
       <Project>{c6da43fd-4cf5-412d-8c07-bc10e8a9097f}</Project>
       <Name>MST.QA.Client.Contracts</Name>

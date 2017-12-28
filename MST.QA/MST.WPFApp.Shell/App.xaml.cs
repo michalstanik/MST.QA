@@ -1,10 +1,10 @@
-﻿using MST.WPFApp.Shell;
-using System;
+﻿using MST.QA.Client.Bootstrapper;
+using MST.QA.Core.Data;
+using MST.WPFApp.Shell;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
+using System.Reflection;
 using System.Windows;
 
 namespace MST.WPFApp
@@ -17,8 +17,16 @@ namespace MST.WPFApp
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            ObjectBase.Container = MEFLoader.Init(new List<ComposablePartCatalog>()
+            {
+                new AssemblyCatalog(Assembly.GetExecutingAssembly())
+            });
+
             Bootstrapper bootstrapper = new Bootstrapper();
             bootstrapper.Run();
+
+
         }
     }
 }

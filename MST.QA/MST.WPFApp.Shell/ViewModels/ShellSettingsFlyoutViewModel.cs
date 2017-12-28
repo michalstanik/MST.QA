@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro;
+using MST.QA.Client.Contracts.ServiceContracts;
 using MST.QA.Core.ServiceInterfaces;
 using MST.QA.DataModel;
 using MST.WPFApp.Infrastructure.Base;
@@ -56,7 +57,16 @@ namespace MST.WPFApp.Shell.ViewModels
             set { this.SetProperty<IList<AccentColor>>(ref this.accentColors, value); }
         }
 
-        
+        public ObservableCollection<LookupItem> Projects
+        {
+            get { return _projects; }
+            private set
+            {
+                _projects = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         public ApplicationTheme SelectedTheme
         {
@@ -98,9 +108,21 @@ namespace MST.WPFApp.Shell.ViewModels
 
         protected override void OnViewLoaded()
         {
-            base.OnViewLoaded();
-
             _projects = new ObservableCollection<LookupItem>();
+
+            WithClient<IProjectService>(_serviceFactory.CreateClient<IProjectService>(), projectClient =>
+            {
+                IEnumerable<LookupItem> projects = projectClient.GetProjectLookup();
+
+                if (projects != null)
+                {
+                    foreach (LookupItem project in projects)
+                    {
+                        _projects.Add(project);
+                    }
+                }
+            });
         }
+
     }
 }
