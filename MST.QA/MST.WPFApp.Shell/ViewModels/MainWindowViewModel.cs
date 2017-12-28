@@ -5,6 +5,8 @@ using MST.WPFApp.Infrastructure.Events;
 using MST.WPFApp.Infrastructure.Interfaces;
 using System.Windows;
 using System;
+using Prism.Logging;
+using Microsoft.Practices.Unity;
 
 namespace MST.WPFApp.Shell.ViewModels
 {
@@ -18,6 +20,9 @@ namespace MST.WPFApp.Shell.ViewModels
 
             _globalConfigService = globalConfigService;
             GetSavedSettings();
+
+            Container.Resolve<ILoggerFacade>().Log("MainViewModel created", Category.Info, Priority.None);
+
         }
 
         private string statusBarMessage;

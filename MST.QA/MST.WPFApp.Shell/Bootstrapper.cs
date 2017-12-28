@@ -9,6 +9,7 @@ using MST.WPFApp.Infrastructure.Interfaces;
 using MST.WPFApp.Infrastructure.Services;
 using MST.QA.Core.ServiceInterfaces;
 using MST.QA.Client.Proxies;
+using Prism.Logging;
 
 namespace MST.WPFApp.Shell
 {
@@ -51,6 +52,11 @@ namespace MST.WPFApp.Shell
             Container.RegisterInstance<IGlobalConfigService>(Container.Resolve<GlobalConfigService>());
 
             Container.RegisterInstance<IServiceFactory>(Container.Resolve<ServiceFactory>());
+        }
+
+        protected override ILoggerFacade CreateLogger()
+        {
+            return new Logging.NLogLogger();
         }
     }
 }
