@@ -33,11 +33,11 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
-        <!-- Main-Region -->
-        <ItemsControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static infConstants:RegionNames.MainRegion}"/>
         
-        <!-- StatusBar -->
+            <!-- Main-Region -->
+            <ItemsControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static infConstants:RegionNames.MainRegion}"/>
+ 
+            <!-- StatusBar -->
         <StatusBar Grid.Row="2">
             <StatusBarItem>MST.QA</StatusBarItem>
             <Separator Style="{StaticResource MetroStatusBarSeparator}" />

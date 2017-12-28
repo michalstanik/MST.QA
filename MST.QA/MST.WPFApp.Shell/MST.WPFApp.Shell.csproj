@@ -68,6 +68,9 @@
     <Compile Include="Views\ShellSettingsFlyout.xaml.cs">
       <DependentUpon>ShellSettingsFlyout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TabControlView.xaml.cs">
+      <DependentUpon>TabControlView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellSettingsFlyout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TabControlView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +172,14 @@
     <ProjectReference Include="..\MST.WPFApp.Infrastructure\MST.WPFApp.Infrastructure.csproj">
       <Project>{F8D931F2-E344-4970-BFB9-F94828C796C1}</Project>
       <Name>MST.WPFApp.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.WPFApp.ModelTestSuits\MST.WPFApp.ModelTestSuits.csproj">
+      <Project>{e0439517-8f4b-49e8-b9a8-db626121f9e6}</Project>
+      <Name>MST.WPFApp.ModelTestSuits</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MST.WPFApp.ModuleDashboard\MST.WPFApp.ModuleDashboard.csproj">
+      <Project>{30560149-3941-44aa-a3a5-7bc16fbb5301}</Project>
+      <Name>MST.WPFApp.ModuleDashboard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

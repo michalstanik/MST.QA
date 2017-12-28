@@ -10,6 +10,7 @@ using MST.WPFApp.Infrastructure.Services;
 using MST.QA.Core.ServiceInterfaces;
 using MST.QA.Client.Proxies;
 using Prism.Logging;
+using Prism.Modularity;
 
 namespace MST.WPFApp.Shell
 {
@@ -33,11 +34,19 @@ namespace MST.WPFApp.Shell
                 // Add flyouts
                 regionManager.RegisterViewWithRegion(RegionNames.FlyoutRegion, typeof(ShellSettingsFlyout));
                 // Add tiles to MainRegion
-                //regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(HomeTiles));
+                regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(TabControlView));
             }
 
             Application.Current.MainWindow = (Window)this.Shell;
             Application.Current.MainWindow.Show();
+        }
+
+        protected override void ConfigureModuleCatalog()
+        {
+            ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
+
+           moduleCatalog.AddModule(typeof(ModuleDashboard.ModuleDashboardModule));
+           moduleCatalog.AddModule(typeof(ModelTestSuits.ModelTestSuitsModule));
         }
 
         protected override void ConfigureContainer()

@@ -69,7 +69,6 @@ namespace MST.WPFApp.Shell.ViewModels
             }
         }
 
-
         public ApplicationTheme SelectedTheme
         {
             get { return selectedTheme; }
@@ -87,8 +86,6 @@ namespace MST.WPFApp.Shell.ViewModels
                 }
             }
         }
-
-
 
         public AccentColor SelectedAccentColor
         {
