@@ -7,12 +7,14 @@ using MST.WPFApp.Infrastructure.Constants;
 using MST.WPFApp.Infrastructure.Events;
 using MST.WPFApp.Infrastructure.Interfaces;
 using MST.WPFApp.Shell.Model;
+using Prism.Logging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
+using Microsoft.Practices.Unity;
 
 namespace MST.WPFApp.Shell.ViewModels
 {
@@ -39,9 +41,9 @@ namespace MST.WPFApp.Shell.ViewModels
             this.AccentColors = ThemeManager.Accents
                                 .Select(a => new AccentColor() { Name = a.Name, ColorBrush = a.Resources["AccentColorBrush"] as Brush })
                                 .ToList();
-        }
 
-        
+            Container.Resolve<ILoggerFacade>().Log("ShellSettingsFlyoutViewModel created", Category.Info, Priority.None);
+        }
 
         public IList<ApplicationTheme> ApplicationThemes
         {
