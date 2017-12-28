@@ -17,9 +17,8 @@ namespace MST.WPFApp.Shell.ViewModels
             EventAggregator.GetEvent<StatusBarMessageUpdateEvent>().Subscribe(OnStatusBarMessageUpdateEvent);
 
             _globalConfigService = globalConfigService;
-            GetSavedTheme();
+            GetSavedSettings();
         }
-
 
         private string statusBarMessage;
 
@@ -34,10 +33,17 @@ namespace MST.WPFApp.Shell.ViewModels
             this.StatusBarMessage = statusBarMessage;
         }
 
-        private void GetSavedTheme()
+        private void GetSavedSettings()
         {
             var SavedTheme = _globalConfigService.Get(AppSettingsParam.AppTheme);
+            var SavedColor = _globalConfigService.Get(AppSettingsParam.AppColor);
+
             ThemeManager.ChangeAppTheme(Application.Current, SavedTheme.ToString());
+
+            var NewTheme = ThemeManager.DetectAppStyle(Application.Current);
+            var NewColor = ThemeManager.GetAccent(SavedColor.ToString());
+
+            ThemeManager.ChangeAppStyle(Application.Current, NewColor, NewTheme.Item1);
         }
     }
 }

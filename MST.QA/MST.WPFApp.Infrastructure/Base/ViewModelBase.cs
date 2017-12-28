@@ -2,6 +2,7 @@
 using Prism.Mvvm;
 using Prism.Regions;
 using Microsoft.Practices.Unity;
+using System;
 
 namespace MST.WPFApp.Infrastructure.Base
 {
@@ -34,6 +35,31 @@ namespace MST.WPFApp.Infrastructure.Base
         {
             get { return eventAggregator; }
             private set { this.SetProperty<IEventAggregator>(ref this.eventAggregator, value); }
+        }
+
+        public virtual string ViewTitle
+        {
+            get { return String.Empty; }
+        }
+
+        public object ViewLoaded
+        {
+            get
+            {
+                OnViewLoaded();
+                return null;
+            }
+        }
+
+        protected virtual void OnViewLoaded() { }
+
+        protected void WithClient<T>(T proxy, Action<T> codeToExecute)
+        {
+            codeToExecute.Invoke(proxy);
+
+            IDisposable disposableClient = proxy as IDisposable;
+            if (disposableClient != null)
+                disposableClient.Dispose();
         }
     }
 }

@@ -7,6 +7,8 @@ using MST.WPFApp.Shell.Views;
 using MST.WPFApp.Infrastructure;
 using MST.WPFApp.Infrastructure.Interfaces;
 using MST.WPFApp.Infrastructure.Services;
+using MST.QA.Core.ServiceInterfaces;
+using MST.QA.Client.Proxies;
 
 namespace MST.WPFApp.Shell
 {
@@ -47,6 +49,8 @@ namespace MST.WPFApp.Shell
             Container.RegisterInstance<IFlyoutService>(Container.Resolve<FlyoutService>());
 
             Container.RegisterInstance<IGlobalConfigService>(Container.Resolve<GlobalConfigService>());
+
+            Container.RegisterInstance<IServiceFactory>(Container.Resolve<ServiceFactory>());
         }
     }
 }
