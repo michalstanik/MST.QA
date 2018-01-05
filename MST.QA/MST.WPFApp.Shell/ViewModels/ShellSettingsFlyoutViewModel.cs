@@ -62,11 +62,7 @@ namespace MST.WPFApp.Shell.ViewModels
         public ObservableCollection<LookupItem> Projects
         {
             get { return _projects; }
-            private set
-            {
-                _projects = value;
-                OnPropertyChanged();
-            }
+            set { this.SetProperty<ObservableCollection<LookupItem>>(ref this._projects, value); }
         }
 
         public ApplicationTheme SelectedTheme

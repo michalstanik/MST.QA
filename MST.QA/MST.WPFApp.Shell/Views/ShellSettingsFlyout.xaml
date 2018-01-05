@@ -79,7 +79,7 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0">Projects</Label>
-                <ComboBox Grid.Column="1" Grid.Row="0" Margin="5" ItemsSource="{Binding Projects}" DisplayMemberPath="DisplayMember"></ComboBox>
+                <ComboBox Grid.Column="1" Grid.Row="0" Margin="5" ItemsSource="{Binding Path=Projects, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="DisplayMember"></ComboBox>
 
                 <Button Command="{Binding OkCommand}" IsDefault="True" Grid.Column="1" Grid.Row="5" Margin="5" Width="80" HorizontalAlignment="Right">OK</Button>
             </Grid>

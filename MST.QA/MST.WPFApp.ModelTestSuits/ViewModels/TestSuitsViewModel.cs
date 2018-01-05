@@ -10,7 +10,7 @@ namespace MST.WPFApp.ModelTestSuits.ViewModels
     {
         public TestSuitsViewModel()
         {
-
+          
         }
     }
 }
