@@ -21,7 +21,7 @@ namespace MST.WPFApp.ModelTestSuits
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(TestSuitsView));
+            //_regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(TestSuitsView));
         }
     }
 }

@@ -13,15 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace MST.WPFApp.ModuleDashboard.Views
 {
     /// <summary>
-    /// Interaction logic for DasboardView.xaml
+    /// Interaction logic for TestSuitsView.xaml
     /// </summary>
-    public partial class DasboardView : UserControl
+    public partial class TestSuitsView : UserControl
     {
-        public DasboardView()
+        public TestSuitsView()
         {
             InitializeComponent();
         }

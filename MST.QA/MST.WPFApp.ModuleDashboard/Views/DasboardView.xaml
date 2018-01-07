@@ -9,10 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-        <TabItem Header="Dashboard">
-            <Grid>
-                <TextBlock>DUPA 2</TextBlock>
-            </Grid>
-        </TabItem>
+        <TextBlock>Dashboard</TextBlock>
+
 
 </UserControl>

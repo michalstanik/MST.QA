@@ -6,7 +6,7 @@ using System;
 
 namespace MST.WPFApp.Infrastructure.Base
 {
-    public class ViewModelBase : BindableBase
+    public class ViewModelBase : BindableBase, INavigationAware
     {
         private IUnityContainer unityContainer;
         private IRegionManager regionManager;
@@ -60,6 +60,28 @@ namespace MST.WPFApp.Infrastructure.Base
             IDisposable disposableClient = proxy as IDisposable;
             if (disposableClient != null)
                 disposableClient.Dispose();
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            
+        }
+
+        public virtual bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+
+        }
+
+        string _title;
+        public string Title
+        {
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
         }
     }
 }

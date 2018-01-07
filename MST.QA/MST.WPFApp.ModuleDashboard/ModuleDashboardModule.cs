@@ -21,7 +21,11 @@ namespace MST.WPFApp.ModuleDashboard
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(DasboardView));
+            //_regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(DasboardView));
+            //_regionManager.RegisterViewWithRegion(RegionNames.MainRegion, typeof(TestSuitsView));
+
+            _container.RegisterType<object, DasboardView>("ViewA");
+            _container.RegisterType<object, TestSuitsView>("ViewB");
         }
     }
 }

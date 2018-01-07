@@ -4,18 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Prism.Regions;
 
 namespace MST.WPFApp.ModuleDashboard.ViewModels
 {
-    public class DasboardViewModel : ViewModelBase
+    public class TestSuitsViewModel : ViewModelBase
     {
-        public DasboardViewModel()
+        public TestSuitsViewModel()
         {
-            Title = "Dashboard";
+            Title = "Test Suits";
         }
-        protected override void OnViewLoaded()
+
+        public override bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            base.OnViewLoaded();
+            return false;
         }
     }
 }

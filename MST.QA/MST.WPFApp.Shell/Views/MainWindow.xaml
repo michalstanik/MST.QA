@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                   
         xmlns:infConstants="clr-namespace:MST.WPFApp.Infrastructure.Constants;assembly=MST.WPFApp.Infrastructure"
         xmlns:prism="http://www.codeplex.com/prism"
         prism:ViewModelLocator.AutoWireViewModel="True"
@@ -27,15 +28,26 @@
         <metro:FlyoutsControl x:Name="flyoutsControlRegion" />
     </metro:MetroWindow.Flyouts>
 
+    <metro:MetroWindow.Resources>
+        <Style TargetType="TabItem" BasedOn="{StaticResource MetroTabItem}">
+            <Setter Property="Header" Value="{Binding DataContext.Title}"/>
+        </Style>
+    </metro:MetroWindow.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TabControl Grid.Row="1">
+
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding NavigateCommand}" CommandParameter="ViewA">Navigate Dashboard</Button>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="ViewB">Navigate Test Suits</Button>
+        </StackPanel>
+        
+        <TabControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static infConstants:RegionNames.MainRegion}">
             <!-- Main-Region -->
-            <ItemsControl  prism:RegionManager.RegionName="{x:Static infConstants:RegionNames.MainRegion}"/>
         </TabControl>
         <!-- StatusBar -->
         <StatusBar Grid.Row="2">
