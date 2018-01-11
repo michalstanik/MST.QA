@@ -9,12 +9,15 @@ using Prism.Logging;
 using Microsoft.Practices.Unity;
 using Prism.Regions;
 using Prism.Commands;
+using MST.QA.Client.WPF.Views;
+using System.Windows.Input;
 
 namespace MST.WPFApp.Shell.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
         private IRegionManager _regionManager;
+        private IUnityContainer _container;
         private IGlobalConfigService _globalConfigService;
 
         public MainWindowViewModel(IGlobalConfigService globalConfigService, IRegionManager regionManager)
@@ -31,7 +34,6 @@ namespace MST.WPFApp.Shell.ViewModels
             Container.Resolve<ILoggerFacade>().Log("MainViewModel created", Category.Info, Priority.None);
 
         }
-
         public DelegateCommand<string> NavigateCommand { get; set; }
 
         private string statusBarMessage;
@@ -63,6 +65,12 @@ namespace MST.WPFApp.Shell.ViewModels
         private void Navigate(string navigationPath)
         {
             _regionManager.RequestNavigate(RegionNames.MainRegion, navigationPath);
+        }
+
+
+        protected override void OnViewLoaded()
+        {
+            base.OnViewLoaded();
         }
     }
 }

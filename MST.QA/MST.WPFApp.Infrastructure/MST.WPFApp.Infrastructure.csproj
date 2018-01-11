@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ApplicationCommands.cs" />
     <Compile Include="Base\FlyoutViewBase.cs" />
+    <Compile Include="Base\MetroWindowViewBase.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Constants\AppSettingsParam.cs" />
     <Compile Include="Constants\FlyoutNames.cs" />

@@ -164,6 +164,10 @@
       <Project>{95f98d4b-a220-4ab4-9ab6-26f8470b1735}</Project>
       <Name>MST.QA.Client.Proxies</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MST.QA.Client.WPF\MST.QA.Client.WPF.csproj">
+      <Project>{1DCF4916-8FB6-4842-BCE5-C4EBE9F0B03B}</Project>
+      <Name>MST.QA.Client.WPF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MST.QA.Core\MST.QA.Core.csproj">
       <Project>{25F4E6FC-B661-4E1C-8348-66F81409EBCB}</Project>
       <Name>MST.QA.Core</Name>
