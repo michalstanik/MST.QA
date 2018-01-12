@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.WPFApp.ModuleDashboard"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.WPFApp.ModelTestSuits", "MST.WPFApp.ModelTestSuits\MST.WPFApp.ModelTestSuits.csproj", "{E0439517-8F4B-49E8-B9A8-DB626121F9E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MST.WPFApp.ModuleProjects", "MST.WPFApp.ModuleProjects\MST.WPFApp.ModuleProjects.csproj", "{391A4687-29A7-475E-AF3F-9201FFF0CA8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +139,10 @@ Global
 		{E0439517-8F4B-49E8-B9A8-DB626121F9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0439517-8F4B-49E8-B9A8-DB626121F9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0439517-8F4B-49E8-B9A8-DB626121F9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391A4687-29A7-475E-AF3F-9201FFF0CA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391A4687-29A7-475E-AF3F-9201FFF0CA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391A4687-29A7-475E-AF3F-9201FFF0CA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391A4687-29A7-475E-AF3F-9201FFF0CA8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{F8D931F2-E344-4970-BFB9-F94828C796C1} = {656F6770-442F-4D11-87DB-B03C2FCBA26C}
 		{30560149-3941-44AA-A3A5-7BC16FBB5301} = {C83E0C37-65A8-4DB3-8E05-BDE628A05FFA}
 		{E0439517-8F4B-49E8-B9A8-DB626121F9E6} = {C83E0C37-65A8-4DB3-8E05-BDE628A05FFA}
+		{391A4687-29A7-475E-AF3F-9201FFF0CA8D} = {C83E0C37-65A8-4DB3-8E05-BDE628A05FFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33EBE3E1-64C7-41BC-99A3-A849A6893BC6}

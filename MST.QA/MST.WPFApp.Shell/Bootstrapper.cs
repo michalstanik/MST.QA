@@ -11,6 +11,9 @@ using MST.QA.Core.ServiceInterfaces;
 using MST.QA.Client.Proxies;
 using Prism.Logging;
 using Prism.Modularity;
+using MST.WPFApp.ModuleProjects.ViewModels;
+using MST.WPFApp.ModuleProjects.Lookups;
+using MST.WPFApp.ModuleProjects.Interfaces;
 
 namespace MST.WPFApp.Shell
 {
@@ -45,8 +48,9 @@ namespace MST.WPFApp.Shell
         {
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
 
-           moduleCatalog.AddModule(typeof(ModuleDashboard.ModuleDashboardModule));
-           moduleCatalog.AddModule(typeof(ModelTestSuits.ModelTestSuitsModule));
+            moduleCatalog.AddModule(typeof(ModuleDashboard.ModuleDashboardModule));
+            moduleCatalog.AddModule(typeof(ModelTestSuits.ModelTestSuitsModule));
+            moduleCatalog.AddModule(typeof(ModuleProjects.ModuleProjectsModule));
         }
 
         protected override void ConfigureContainer()

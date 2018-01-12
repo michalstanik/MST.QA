@@ -17,7 +17,6 @@ namespace MST.WPFApp.Shell.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
         private IRegionManager _regionManager;
-        private IUnityContainer _container;
         private IGlobalConfigService _globalConfigService;
 
         public MainWindowViewModel(IGlobalConfigService globalConfigService, IRegionManager regionManager)

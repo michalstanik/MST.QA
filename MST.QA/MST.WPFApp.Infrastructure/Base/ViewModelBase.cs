@@ -3,10 +3,12 @@ using Prism.Mvvm;
 using Prism.Regions;
 using Microsoft.Practices.Unity;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace MST.WPFApp.Infrastructure.Base
 {
-    public class ViewModelBase : BindableBase, INavigationAware
+    public class ViewModelBase : BindableBase, INavigationAware, INotifyPropertyChanged
     {
         private IUnityContainer unityContainer;
         private IRegionManager regionManager;
@@ -82,6 +84,13 @@ namespace MST.WPFApp.Infrastructure.Base
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
+        }
+
+        public new event PropertyChangedEventHandler PropertyChanged;
+
+        protected new virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
