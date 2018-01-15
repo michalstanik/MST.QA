@@ -26,5 +26,10 @@ namespace MST.QA.Client.Proxies.ServiceProxies
         {
             return Channel.GetProjectLookup();
         }
+
+        public IEnumerable<LookupItem> GetProjectTypeLookup()
+        {
+            return Channel.GetProjectTypeLookup();
+        }
     }
 }

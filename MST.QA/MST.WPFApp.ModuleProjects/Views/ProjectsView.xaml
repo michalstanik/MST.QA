@@ -18,8 +18,9 @@
     </inf:UserControlViewBase.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
         <view:ProjectNavigationView DataContext="{Binding ProjectNavigationViewModel}"/>
         <ContentControl Grid.Column="1" Content="{Binding DetailViewModel}"/>

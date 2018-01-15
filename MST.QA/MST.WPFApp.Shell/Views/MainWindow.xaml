@@ -50,12 +50,6 @@
         </Style>
     </metro:MetroWindow.Resources>
 
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding MyICommandThatShouldHandleLoaded}" />
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

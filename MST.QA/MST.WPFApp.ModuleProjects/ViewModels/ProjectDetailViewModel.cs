@@ -8,17 +8,20 @@ using MST.QA.Core.ServiceInterfaces;
 using MST.QA.Client.Contracts.ServiceContracts;
 using MST.QA.DataModel.Projects;
 using MST.WPFApp.ModuleProjects.Wrapper;
+using MST.WPFApp.ModuleProjects.Lookups;
 
 namespace MST.WPFApp.ModuleProjects.ViewModels
 {
     public class ProjectDetailViewModel : DetailViewModelBase, IProjectDetailViewModel
     {
         private IServiceFactory _serviceFactory;
+        private IProjectLookupDataService _projectLookupService;
         private ProjectWrapper _project;
 
-        public ProjectDetailViewModel(IServiceFactory serviceFactory)
+        public ProjectDetailViewModel(IServiceFactory serviceFactory, IProjectLookupDataService projectLookupService)
         {
             _serviceFactory = serviceFactory;
+            _projectLookupService = projectLookupService;
             ProjectTypes = new ObservableCollection<LookupItem>();
         }
 
@@ -52,6 +55,18 @@ namespace MST.WPFApp.ModuleProjects.ViewModels
             await LoadProjectTypesLookupAsync();
         }
 
+        private async Task LoadProjectTypesLookupAsync()
+        {
+            ProjectTypes.Clear();
+            ProjectTypes.Add(new NullLookupItem { DisplayMember = " - " });
+
+            var lookup = _projectLookupService.GetProjectTypeLookupAsync();
+            foreach (var lookupItem in lookup)
+            {
+                ProjectTypes.Add(lookupItem);
+            }
+        }
+
         private void InitializeProject(Project project)
         {
             Project = new ProjectWrapper(project);
@@ -60,11 +75,6 @@ namespace MST.WPFApp.ModuleProjects.ViewModels
         private Project CreateNewProject()
         {
             throw new NotImplementedException();
-        }
-
-        private async Task LoadProjectTypesLookupAsync()
-        {
-           
         }
 
         protected override void OnDeleteExecute()

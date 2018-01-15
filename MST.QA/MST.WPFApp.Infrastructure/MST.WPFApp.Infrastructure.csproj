@@ -53,6 +53,8 @@
     <Compile Include="Constants\FlyoutNames.cs" />
     <Compile Include="Constants\RegionNames.cs" />
     <Compile Include="Constants\WindowNames.cs" />
+    <Compile Include="Events\AfteDetailDeletedEvent.cs" />
+    <Compile Include="Events\AfterDetailSavedEvent.cs" />
     <Compile Include="Events\OpenDetailViewEvent.cs" />
     <Compile Include="Events\StatusBarMessageUpdateEvent.cs" />
     <Compile Include="Interfaces\IDetailViewModel.cs" />

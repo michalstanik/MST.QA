@@ -8,5 +8,6 @@ namespace MST.QA.Data.Contracts.RepositoryInterfaces
     public interface IProjectRepository : IDataRepository<Project>
     {
         IEnumerable<LookupItem> GetProjectLookup();
+        IEnumerable<LookupItem> GetProjectTypeLookup();
     }
 }

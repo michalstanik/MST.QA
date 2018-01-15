@@ -26,6 +26,22 @@ namespace MST.QA.Data.DataRepositories
             }
         }
 
+        public IEnumerable<LookupItem> GetProjectTypeLookup()
+        {
+            using (MSTQAContext entityContext = new MSTQAContext())
+            {
+                return entityContext.ProjectTypes.AsNoTracking()
+                    .Select(f =>
+                    new LookupItem
+                    {
+                        Id = f.Id,
+                        DisplayMember = f.ProjectTypeName
+                    })
+                    .ToList();
+            }
+
+        }
+
         protected override Project AddEntity(MSTQAContext entityContext, Project entity)
         {
             return entityContext.Projects.Add(entity);

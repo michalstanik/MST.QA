@@ -7,5 +7,6 @@ namespace MST.WPFApp.ModuleProjects.Lookups
     public interface IProjectLookupDataService
     {
         IEnumerable<LookupItem> GetProjectLookupAsync();
+        IEnumerable<LookupItem> GetProjectTypeLookupAsync();
     }
 }

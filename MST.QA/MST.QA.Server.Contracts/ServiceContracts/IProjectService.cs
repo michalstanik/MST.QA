@@ -16,5 +16,8 @@ namespace MST.QA.Server.Contracts.ServiceContracts
 
         [OperationContract]
         IEnumerable<LookupItem> GetProjectLookup();
+
+        [OperationContract]
+        IEnumerable<LookupItem> GetProjectTypeLookup();
     }
 }

@@ -13,6 +13,7 @@ namespace MST.WPFApp.ModuleProjects.Lookups
     {
         private IServiceFactory _serviceFactory;
         private IEnumerable<LookupItem> _projects;
+        private IEnumerable<LookupItem> _projectTypes;
 
         public ProjectLookupDataService(IServiceFactory serviceFactory)
         {
@@ -27,6 +28,16 @@ namespace MST.WPFApp.ModuleProjects.Lookups
             });
 
             return _projects;
+        }
+
+        public IEnumerable<LookupItem> GetProjectTypeLookupAsync()
+        {
+            WithClient<IProjectService>(_serviceFactory.CreateClient<IProjectService>(), projectClient =>
+            {
+                _projectTypes = projectClient.GetProjectTypeLookup();
+            });
+
+            return _projectTypes;
         }
     }
 }

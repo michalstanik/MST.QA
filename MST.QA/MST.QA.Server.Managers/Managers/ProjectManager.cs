@@ -73,5 +73,17 @@ namespace MST.QA.Server.Managers.Managers
                 return projecLookup;
             });
         }
+
+        public IEnumerable<LookupItem> GetProjectTypeLookup()
+        {
+            return ExecuteFaultHandledOperation(() =>
+            {
+                IProjectRepository projectRepository = _dataRepositoryFactory.GetDataRepository<IProjectRepository>();
+
+                IEnumerable<LookupItem> projectTypeLookup = projectRepository.GetProjectTypeLookup();
+
+                return projectTypeLookup;
+            });
+        }
     }
 }
